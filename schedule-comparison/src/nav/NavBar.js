@@ -1,14 +1,16 @@
 import NavBarElement from "./NavBarElement"
+import { useNavigate } from 'react-router-dom'
 
 function NavBar({ loginStatus, onSignout }) {
     let loginButton;
     let scheduleButton;
     let compareButton;
     const defaultNavBarElementStyle="hover:bg-neutral-200 dark:hover:bg-neutral-900";
+    const navigate = useNavigate();
 
     if (loginStatus) {
         loginButton = <NavBarElement onClick={() => { 
-            fetch('http://localhost:8000/logout', {credentials: "include"}).then(res => res.text()).then(console.log).catch(console.log);
+            fetch('http://10.0.0.152:8000/logout', {credentials: "include"}).then(res => res.text()).then(() => { navigate('/') }).catch(console.log);
             onSignout(false)
         }} className={defaultNavBarElementStyle} link="sign out"></NavBarElement>
         scheduleButton = <NavBarElement to="add-schedule" className={defaultNavBarElementStyle} link="add schedule"></NavBarElement>

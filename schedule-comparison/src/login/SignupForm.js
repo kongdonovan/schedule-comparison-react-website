@@ -15,7 +15,7 @@ function SignupForm({ loginState }) {
             let data = new FormData();
             data.append("user", user);
             data.append("pass", pass);
-            fetch("http://localhost:8000/signup", {method: "POST", body: data, credentials: "include"})
+            fetch("http://10.0.0.152:8000/signup", {method: "POST", body: data, credentials: "include"})
                 .then(statusCheck)
                 .then(res => res.text())
                 .then(res => {
