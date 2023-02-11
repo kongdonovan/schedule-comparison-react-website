@@ -10,7 +10,7 @@ function NavBar({ loginStatus, onSignout }) {
 
     if (loginStatus) {
         loginButton = <NavBarElement onClick={() => { 
-            fetch('http://10.0.0.152:8000/logout', {credentials: "include"}).then(res => res.text()).then(() => { navigate('/') }).catch(console.log);
+            fetch('http://http://73.109.61.72/:8000/logout', {credentials: "include"}).then(res => res.text()).then(() => { navigate('/') }).catch(console.log);
             onSignout(false)
         }} className={defaultNavBarElementStyle} link="sign out"></NavBarElement>
         scheduleButton = <NavBarElement to="add-schedule" className={defaultNavBarElementStyle} link="add schedule"></NavBarElement>

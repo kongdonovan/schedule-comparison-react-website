@@ -15,7 +15,7 @@ function LoginForm({ loginState }) {
             let data = new FormData();
             data.append("user", user);
             data.append("pass", pass);
-            fetch("http://10.0.0.152:8000/login", {method: "POST", body: data, credentials: "include"})
+            fetch("http://http://73.109.61.72/:8000/login", {method: "POST", body: data, credentials: "include"})
                 .then(statusCheck)
                 .then(res => res.text())
                 .then(res => {
